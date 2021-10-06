@@ -8,9 +8,6 @@ class Product:
         self.description = description
         self.product_dimensions = product_dimensions
 
-    def get_price(self):
-        return self.price
-
     def __str__(self):
         return '\nProduct data:\nPrice: ' + str(
             self.price) + ' UAH\nBrand: ' + self.brand + '\nDescription: ' + self.description + '\nDimension: ' \
@@ -40,7 +37,7 @@ class Order:
 
     def get_total(self):
         for key in self.products:
-            self.total_price += self.products[key].get_price()
+            self.total_price += self.products[key].price
         return '\nTotal price: ' + str(round(self.total_price, 2))
 
     def customer_data(self):
