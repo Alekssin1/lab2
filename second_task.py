@@ -8,21 +8,20 @@ class Text:
         self.data = self.file.read()
 
     def count_words(self):
-        words = self.data.split()
-        return "\nNumber of words: " + str(len(words))
+        return len(self.data.split())
 
     def count_symbols(self):
-        return "\nNumber of symbols: " + str(len(self.data))
+        return len(self.data)
 
     def count_sentence(self):
         sentence = 0
-        stop_signs = ('. ', '.\n', '?', '?!', '...', '!')
+        stop_signs = ('. ', '.\n', '?', '...', '!')
         for i in stop_signs:
             sentence += self.data.count(i)
-        return "\nNumber of sentences: " + str(sentence)
+        return sentence
 
 
 file_name = "vlad.txt"
 statistical_processing = Text(file_name)
-print(statistical_processing.count_symbols(), statistical_processing.count_words(),
-      statistical_processing.count_sentence())
+print("Number of symbols: ", statistical_processing.count_symbols(), "\nNumber of words: ",
+      statistical_processing.count_words(), "\nNumber of sentences: ", statistical_processing.count_sentence())

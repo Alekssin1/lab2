@@ -9,19 +9,18 @@ class Rectangle:
             self.length = length
             self.width = width
         else:
-            print('Length and width should be > 0 and < 20')
-            exit()
+            raise TypeError('Length and width should be > 0 and < 20')
 
     def get_length_and_width(self):
         return self.length, self.width
 
     def perimeter_count(self):
         perimeter = 2 * sum(self.get_length_and_width())
-        return perimeter
+        return round(perimeter, 2)
 
     def area_count(self):
         area = self.length * self.width
-        return area
+        return round(area, 2)
 
 
 my_rectangle = Rectangle()

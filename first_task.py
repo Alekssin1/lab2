@@ -41,7 +41,7 @@ class Order:
     def get_total(self):
         for key in self.products:
             self.total_price += self.products[key].get_price()
-        return '\nTotal price: ' + str(self.total_price)
+        return '\nTotal price: ' + str(round(self.total_price, 2))
 
     def customer_data(self):
         return self.client
@@ -51,7 +51,8 @@ class Order:
 
 
 jeans = Product(4900.00, "Levi's", "blue slim fit jeans", length=70, width=50, height=20)
-cs = Product(5399.99, "Levi's", "Casual hoodie for everyday", length=70, width=50, height=20)
+hoodie = Product(5399.99, "Levi's", "Casual hoodie for everyday", length=70, width=50, height=20)
+sneakers = Product(7777.77, "Nike", "Jordan is the best sneakers for basketball", length=38, width=30, height=15)
 client = Customer('Dzhulai', 'Anthony', 'Peterson', '0965443211')
-order = Order(client, first_product=jeans, second_product=cs)
+order = Order(client, first_product=jeans, second_product=hoodie, third_product=sneakers)
 print(order.product_data(), order.customer_data(), order.get_total())
