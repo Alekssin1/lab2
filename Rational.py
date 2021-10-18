@@ -4,64 +4,75 @@ from math import gcd
 class Rational:
 
     def __init__(self, numerator=1, denominator=1):
-        if not isinstance(numerator, int) or not isinstance(denominator, int) or denominator == 0:
-            raise TypeError("Incorrect input! Variable type must be int! Denominator can't be zero!")
-        self.__numerator = numerator
-        self.__denominator = denominator
-        self.new_numerator = 1
-        self.new_denominator = 1
+        if isinstance(numerator, int) and isinstance(denominator, int):
+            if denominator:
+                self.__numerator = numerator
+                self.__denominator = denominator
 
-    def reduction(self):
-        """ find greatest common divider of two integers and reduce fraction"""
-        divider = gcd(self.__numerator, self.__denominator)
-        return self.__numerator // divider, self.__denominator // divider
+            else:
+                raise ZeroDivisionError("Denominator can't be zero!")
+        else:
+            raise TypeError("Incorrect input! Variable type must be int!")
 
     @staticmethod
-    def checking_second_number(second_numerator, second_denominator):
-        """ check whether the fraction is entered correctly """
-        if not isinstance(second_numerator, int) or not isinstance(second_denominator, int) or second_denominator == 0:
-            raise TypeError("Incorrect input! Variable type must be int! Denominator can't be zero!")
-        else:
-            return True
+    def reduction(numerator, denominator):
+        """ find greatest common divider of two integers and reduce fraction"""
+        divider = gcd(numerator, denominator)
+        return numerator // divider, denominator // divider
 
-    def add(self, new_numerator, new_denominator):
-        if self.checking_second_number(new_numerator, new_denominator):
-            self.__numerator = self.__numerator * new_denominator + new_numerator * self.__denominator
-            self.__denominator = self.__denominator * new_denominator
+    def __add__(self, other):
+        if not isinstance(other, Rational):
+            raise TypeError("It should be rational type!")
+        numerator = self.__numerator * other.__denominator + other.__numerator * self.__denominator
+        denominator = self.__denominator * other.__denominator
+        return Rational(numerator, denominator)
 
-    def sub(self, new_numerator, new_denominator):
-        if self.checking_second_number(new_numerator, new_denominator):
-            self.__numerator = self.__numerator * new_denominator - new_numerator * self.__denominator
-            self.__denominator = self.__denominator * new_denominator
+    def __sub__(self, other):
+        if not isinstance(other, Rational):
+            raise TypeError("It should be rational type!")
+        numerator = self.__numerator * other.__denominator - other.__numerator * self.__denominator
+        denominator = self.__denominator * other.__denominator
+        return Rational(numerator, denominator)
 
-    def multi(self, new_numerator, new_denominator):
-        if self.checking_second_number(new_numerator, new_denominator):
-            self.__numerator = self.__numerator * new_numerator
-            self.__denominator = self.__denominator * new_denominator
+    def __mul__(self, other):
+        if not isinstance(other, Rational):
+            raise TypeError("It should be rational type!")
+        numerator = self.__numerator * other.__numerator
+        denominator = self.__denominator * other.__denominator
+        return Rational(numerator, denominator)
 
-    def div(self, new_numerator, new_denominator):
-        if self.checking_second_number(new_numerator, new_denominator) and new_numerator != 0:
-            self.__numerator = self.__numerator * new_denominator
-            self.__denominator = self.__denominator * new_numerator
-        elif new_numerator == 0:
-            raise ZeroDivisionError("Division by zero, try again!")
+    def __truediv__(self, other):
+        if not isinstance(other, Rational):
+            raise TypeError("It should be rational type!")
+        elif other.__numerator == 0:
+            raise ZeroDivisionError("Division by zero!")
+        numerator = self.__numerator * other.__denominator
+        denominator = self.__denominator * other.__numerator
+        return Rational(numerator, denominator)
 
     def get_fraction(self):
         """ return fraction in form numerator/denominator """
-        return f"{int(self.reduction()[0])}/{int(self.reduction()[1])}"
+        reduce_form = self.reduction(self.__numerator, self.__denominator)
+        return f"{int(reduce_form[0])}/{int(reduce_form[1])}"
 
     def get_floating(self):
         """ return fraction in floating-point format """
-        return round(self.reduction()[0] / self.reduction()[1], 2)
+        return f"{round(self.__numerator / self.__denominator, 2)}"
 
 
 rational = Rational(3, 6)
-print(rational.get_fraction(), rational.get_floating())
-rational.add(1, 5)
-print("1/2 + 1/5 = ", rational.get_fraction(), '=', rational.get_floating())
-rational.sub(1, 10)
-print("7/10 - 1/10 = ", rational.get_fraction(), '=', rational.get_floating())
-rational.multi(4, 5)
-print("3/5 * 4/5 = ", rational.get_fraction(), '=', rational.get_floating())
-rational.div(1, 5.2)
-print("12/25 / 1/5.2 = ", rational.get_fraction(), '=', rational.get_floating())
+print("3/6 = " + rational.get_fraction() + " = " + rational.get_floating())
+b = Rational(1, 5)
+c = Rational(1, 10)
+d = Rational(4, 5)
+z = Rational(0, 3)
+e = rational + b
+print(rational.get_fraction() + " + " + b.get_fraction() + " = " + e.get_fraction() + " = " + e.get_floating())
+f = e - c
+print(e.get_fraction() + " - " + c.get_fraction() + " = " + f.get_fraction() + " = " + f.get_floating())
+g = f * d
+print(f.get_fraction() + " * " + d.get_fraction() + " = " + g.get_fraction() + " = " + g.get_floating())
+h = g / b
+print(g.get_fraction() + " / " + b.get_fraction() + " = " + h.get_fraction() + " = " + h.get_floating())
+j = h / z
+print(h.get_fraction() + " / " + z.get_fraction() + " = " + j.get_fraction() + " = " + j.get_floating())

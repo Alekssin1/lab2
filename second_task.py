@@ -1,23 +1,43 @@
 class Text:
-    def __init__(self, file):
+    def __init__(self, name_of_file):
+        self.file = name_of_file
+
+    def count_words(self):
         try:
-            self.file = open(file, 'r')
+            data = open(self.file, 'r')
         except IOError or FileNotFoundError:
             print('File not found or path is incorrect')
             exit()
-        self.data = self.file.read()
-
-    def count_words(self):
-        return len(self.data.split())
+        count = 0
+        for line in data:
+            count += len(line.split())
+        data.close()
+        return count
 
     def count_symbols(self):
-        return len(self.data)
+        try:
+            data = open(self.file, 'r')
+        except IOError or FileNotFoundError:
+            print('File not found or path is incorrect')
+            exit()
+        count = 0
+        for line in data:
+            count += len(line)
+        data.close()
+        return count
 
     def count_sentence(self):
+        try:
+            data = open(self.file, 'r')
+        except IOError or FileNotFoundError:
+            print('File not found or path is incorrect')
+            exit()
         sentence = 0
         stop_signs = ('. ', '.\n', '?', '...', '!')
-        for i in stop_signs:
-            sentence += self.data.count(i)
+        for line in data:
+            for i in stop_signs:
+                sentence += line.count(i)
+        data.close()
         return sentence
 
 

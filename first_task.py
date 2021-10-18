@@ -1,8 +1,8 @@
 class Product:
 
     def __init__(self, price, brand, description, **product_dimensions):
-        if not isinstance(price, (int, float)):
-            raise TypeError("U must enter a number")
+        if not isinstance(price, (int, float)) or price < 0:
+            raise TypeError("U must enter a number > 0")
         self.price = price
         self.brand = brand
         self.description = description
@@ -12,6 +12,10 @@ class Product:
         return '\nProduct data:\nPrice: ' + str(
             self.price) + ' UAH\nBrand: ' + self.brand + '\nDescription: ' + self.description + '\nDimension: ' \
                + ', '.join(list(map(str, list(self.product_dimensions.values())))) + '\n'
+        # return '\nProduct data:\nPrice: ' + str(
+        #     self.price) + ' UAH\nBrand: ' + self.brand + '\nDescription: ' + self.description + '\nDimension: ' \
+        #        + ', '.join(list(map(lambda item: str(item[0] + ':' + str(item[1])),
+        #        list(self.product_dimensions.values())))) + '\n'
 
 
 class Customer:
