@@ -11,6 +11,7 @@ class Student:
         self.average_score = sum(self.grades) / len(self.grades)
 
     def __str__(self):
+        """Return student data"""
         return '\nStudent data:\nSurname: ' + self.surname + '\nName: ' + self.name + '\nRecord book number: ' \
                + self.record_book_number + '\nGrades: ' + " ".join(map(str, self.grades)) \
                + '\nAverage score: ' + str(self.average_score) + '\n'
@@ -34,27 +35,30 @@ class Group:
 
     @staticmethod
     def checking_elements(name, surname, dictionary):
+        """Check that there is no student in the group with the same name and surname"""
         for key, value in dictionary.items():
             if value.name == name and value.surname == surname:
                 return True
             return False
 
     def best_users(self):
+        """Sorts students by average score in descending order and records the top 5"""
         for key, student in sorted(self.students.items(), key=lambda x: x[1].average_score, reverse=True)[:5]:
             self.best5[key] = student
 
     def __str__(self):
+        """Return group data, and five best students"""
         return 'Faculty: ' + self.faculty + '\nCourse: ' + str(self.course) + '\nGroup name: ' \
                + self.group_name + '\n' + '\n'.join(list(map(str, list(self.best5.values())))) + '\n'
 
 
-person1 = Student("Slava", "Moskalenko", "TI-0101", 1, 4, 4, 4, 5)
-person2 = Student("Slava", "Moskalenko", "TI-0102", 5, 5, 5, 5, 5)
-person3 = Student("Slava", "Moskal", "TI-0103", 2, 4, 3, 4, 5)
-person4 = Student("Slava", "Moska", "TI-0104", 5, 5, 4, 2, 5)
-person5 = Student("Slava", "Mosk", "TI-0105", 2, 3, 3, 2, 3)
-person6 = Student("Slava", "Mos", "TI-0106", 5, 4, 3, 3, 4)
-person7 = Student("Slava", "Mo", "TI-0107", 5, 3, 3, 4, 5)
+person1 = Student("Slava", "Moskalenko", "TI-0101", 4, 4, 5, 5, 5)
+person2 = Student("Slava", "Moskal", "TI-0103", 2, 4, 3, 4, 5)
+person3 = Student("Slava", "Moska", "TI-0104", 5, 5, 4, 2, 5)
+person4 = Student("Slava", "Mosk", "TI-0105", 2, 3, 3, 2, 3)
+person5 = Student("Slava", "Mos", "TI-0106", 5, 4, 3, 3, 4)
+person6 = Student("Slava", "Mo", "TI-0107", 5, 3, 3, 4, 5)
+person7 = Student("Slava", "Moskalenko", "TI-0102", 5, 5, 5, 5, 5)
 person8 = Student("Alex", "Moskalenko", "TI-0108", 2, 3, 2, 1, 5)
 person9 = Student("Alex", "Moskalenk", "TI-0109", 4, 2, 4, 4, 5)
 person10 = Student("Alex", "Moskalen", "TI-0110", 5, 3, 3, 4, 5)

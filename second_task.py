@@ -33,15 +33,24 @@ class Text:
             print('File not found or path is incorrect')
             exit()
         sentence = 0
-        stop_signs = ('. ', '.\n', '?', '...', '!')
+        stop_signs = ('.', '!', '?')
+        spaces = (' ', '    ', '\n')
+        first_enter = True
         for line in data:
-            for i in stop_signs:
-                sentence += line.count(i)
+            for i in line:
+                if i in stop_signs and first_enter:
+                    sentence += 1
+                    first_enter = False
+                elif i not in spaces and i not in stop_signs:
+                    first_enter = True
         data.close()
         return sentence
+
+    def __str__(self):
+        return "Number of symbols: " + str(self.count_symbols()) + "\nNumber of words: " + \
+               str(self.count_words()) + "\nNumber of sentences: " + str(self.count_sentence())
 
 
 file_name = "vlad.txt"
 statistical_processing = Text(file_name)
-print("Number of symbols: ", statistical_processing.count_symbols(), "\nNumber of words: ",
-      statistical_processing.count_words(), "\nNumber of sentences: ", statistical_processing.count_sentence())
+print(statistical_processing)
