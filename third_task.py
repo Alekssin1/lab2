@@ -1,35 +1,94 @@
 class Student:
 
     def __init__(self, name, surname, record_book_number, *grades):
-        self.name = name
-        self.surname = surname
-        self.record_book_number = record_book_number
+        if not isinstance(name, str) or not name:
+            raise TypeError("Name must be a string!")
+        self.__name = name
+        if not isinstance(surname, str) or not surname:
+            raise TypeError("Surname must be a string!")
+        self.__surname = surname
+        self.__record_book_number = record_book_number
         for i in grades:
-            if not isinstance(i, int):
+            if not isinstance(i, int) and i <= 0:
                 raise TypeError("Grade must be a integer > 0")
-        self.grades = grades
-        self.average_score = sum(self.grades) / len(self.grades)
+        self.__grades = grades
+        self.average_score = self.get_average_score(self.grades)
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def surname(self):
+        return self.__surname
+
+    @property
+    def record_book_number(self):
+        return self.__surname
+
+    @property
+    def grades(self):
+        return self.__grades
+
+    @name.setter
+    def name(self, value):
+        if not isinstance(value, str) or not value:
+            raise TypeError("Name must be a string!")
+        self.__name = value
+
+    @surname.setter
+    def surname(self, value):
+        if not isinstance(value, str) or not value:
+            raise TypeError("Surname must be a string!")
+        self.__surname = value
+
+    @record_book_number.setter
+    def record_book_number(self, value):
+        if not isinstance(value, str) or not value:
+            raise TypeError("Name must be a string!")
+        self.__record_book_number = value
+
+    @grades.setter
+    def grades(self, grades):
+        for i in grades:
+            if not isinstance(i, int) and i <= 0:
+                raise TypeError("Grade must be a integer > 0")
+            if not isinstance(grades, list):
+                raise TypeError("Grades must be a list")
+        self.__grades = grades
+        self.average_score = self.get_average_score(self.grades)
+
+    @staticmethod
+    def get_average_score(grades):
+        return sum(grades) / len(grades)
 
     def __str__(self):
         """Return student data"""
-        return '\nStudent data:\nSurname: ' + self.surname + '\nName: ' + self.name + '\nRecord book number: ' \
-               + self.record_book_number + '\nGrades: ' + " ".join(map(str, self.grades)) \
+        return '\nStudent data:\nSurname: ' + self.__surname + '\nName: ' + self.__name + '\nRecord book number: ' \
+               + self.__record_book_number + '\nGrades: ' + " ".join(map(str, self.__grades)) \
                + '\nAverage score: ' + str(self.average_score) + '\n'
+
+
+MAX_STUDENTS = 20
 
 
 class Group:
 
     def __init__(self, faculty, course, group_name, **students):
+        if not isinstance(faculty, str) or not str:
+            raise TypeError("Faculty must be a string!")
         self.faculty = faculty
         if not isinstance(course, int) or course < 0:
             raise TypeError("U must enter a integer > 0")
         self.course = course
+        if not isinstance(group_name, str) or not str:
+            raise TypeError("Faculty must be a string!")
         self.group_name = group_name
         self.students = {}
         self.best5 = {}
         for key in students:
             if not Group.checking_elements(students[key].name, students[key].surname, self.students) and len(
-                    self.students) < 20:
+                    self.students) < MAX_STUDENTS:
                 self.students[key] = students[key]
         self.best_users()
 
@@ -37,7 +96,7 @@ class Group:
     def checking_elements(name, surname, dictionary):
         """Check that there is no student in the group with the same name and surname"""
         for key, value in dictionary.items():
-            if value.name == name and value.surname == surname:
+            if (value.name, value.surname) == (name == surname):
                 return True
             return False
 
@@ -59,6 +118,8 @@ person4 = Student("Slava", "Mosk", "TI-0105", 2, 3, 3, 2, 3)
 person5 = Student("Slava", "Mos", "TI-0106", 5, 4, 3, 3, 4)
 person6 = Student("Slava", "Mo", "TI-0107", 5, 3, 3, 4, 5)
 person7 = Student("Slava", "Moskalenko", "TI-0102", 5, 5, 5, 5, 5)
+person7.name = "Ivan"
+person7.grades = [4, 5, 5, 5, 5]
 person8 = Student("Alex", "Moskalenko", "TI-0108", 2, 3, 2, 1, 5)
 person9 = Student("Alex", "Moskalenk", "TI-0109", 4, 2, 4, 4, 5)
 person10 = Student("Alex", "Moskalen", "TI-0110", 5, 3, 3, 4, 5)

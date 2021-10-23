@@ -2,35 +2,52 @@ class Rectangle:
 
     def __init__(self, length=1, width=1):
         if not isinstance(length, (int, float)) or not isinstance(width, (int, float)):
-            raise TypeError("U must enter a number")
+            raise TypeError("U must enter a number(int or float)")
         if not (0 < length < 20 and 0 < width < 20):
-            raise TypeError('Length and width should be > 0 and < 20')
-        self.length = length
-        self.width = width
+            raise ValueError('Length and width should be > 0 and < 20')
+        self.__length = length
+        self.__width = width
 
-    def get_length_and_width(self):
-        return self.length, self.width
+    @property
+    def length(self):
+        return self.__length
+
+    @length.setter
+    def length(self, value):
+        if not (isinstance(value, (int, float))):
+            raise TypeError("U must enter a number(int or float)")
+        if not 0 < value < 20:
+            raise ValueError("Length should be > 0 and < 20")
+        self.__length = value
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if not (isinstance(value, (int, float))):
+            raise TypeError("U must enter a number(int or float)")
+        if not 0 < value < 20:
+            raise ValueError("Length should be > 0 and < 20")
+        self.__width = value
 
     def perimeter_count(self):
-        perimeter = 2 * sum(self.get_length_and_width())
-        return round(perimeter, 2)
+        return round(2 * (self.__width + self.__length), 2)
 
     def area_count(self):
-        area = self.length * self.width
-        return round(area, 2)
+        return round(self.__length * self.__width, 2)
+
+    def __str__(self):
+        return f'My rectangle perimeter: {self.perimeter_count()}\nMy rectangle area: {self.area_count()}'
 
 
 my_rectangle = Rectangle(14.5, 13.3)
-print("My rectangle perimeter: " + str(my_rectangle.perimeter_count()) +
-      "\nMy rectangle area: " + str(my_rectangle.area_count()))
+print(my_rectangle)
 try:
-    length_inp = float(input('Enter length: '))
-    width_inp = float(input('Enter width: '))
+    my_rectangle.length = float(input('Enter length: '))
+    my_rectangle.width = float(input('Enter width: '))
 except ValueError or TypeError or EOFError:
     print('Incorrect input u should write a number')
     exit()
-user_rectangle = Rectangle(length_inp, width_inp)
-print(
-    "My rectangle perimeter: " + str(user_rectangle.perimeter_count()) +
-    "\nMy rectangle area: " + str(user_rectangle.area_count())
-)
+print(my_rectangle)

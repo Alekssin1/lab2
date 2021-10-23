@@ -4,7 +4,11 @@ class Product:
         if not isinstance(price, (int, float)) or price < 0:
             raise TypeError("U must enter a number > 0")
         self.price = price
+        if not isinstance(brand, str):
+            raise TypeError("Brand must be a string")
         self.brand = brand
+        if not isinstance(description, str):
+            raise TypeError("Description must be a string")
         self.description = description
         self.product_dimensions = product_dimensions
 
@@ -20,10 +24,16 @@ class Product:
 
 class Customer:
     def __init__(self, surname, name, patronymic, mobile_phone):
+        if not isinstance(surname, str):
+            raise TypeError("Surname must be a string")
         self.surname = surname
+        if not isinstance(name, str):
+            raise TypeError("Name must be a string")
         self.name = name
+        if not isinstance(patronymic, str):
+            raise TypeError("Patronymic must be a string")
         self.patronymic = patronymic
-        if not len(mobile_phone) == 10:
+        if not len(mobile_phone) == 10 or not isinstance(mobile_phone, str):
             raise ValueError('Incorrect input, mobile phone should be like 0973334444')
         self.mobile_phone = mobile_phone
 

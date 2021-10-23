@@ -1,3 +1,6 @@
+import re
+
+
 class Text:
     def __init__(self, name_of_file):
         self.file = name_of_file
@@ -5,33 +8,36 @@ class Text:
     def count_words(self):
         try:
             data = open(self.file, 'r')
-        except IOError or FileNotFoundError:
-            print('File not found or path is incorrect')
-            exit()
+        except IOError:
+            raise IOError("File can't be opened")
+        except FileNotFoundError:
+            raise FileNotFoundError('File not found or path is incorrect')
         count = 0
         for line in data:
-            count += len(line.split())
+            count += len(list(filter(lambda x: x, re.split(r"[, \n]+", line))))
         data.close()
         return count
 
     def count_symbols(self):
         try:
             data = open(self.file, 'r')
-        except IOError or FileNotFoundError:
-            print('File not found or path is incorrect')
-            exit()
+        except IOError:
+            raise IOError("File can't be opened")
+        except FileNotFoundError:
+            raise FileNotFoundError('File not found or path is incorrect')
         count = 0
         for line in data:
-            count += len(line)
+            count += len(line) - line.count(' ') - line.count('\n')
         data.close()
         return count
 
     def count_sentence(self):
         try:
             data = open(self.file, 'r')
-        except IOError or FileNotFoundError:
-            print('File not found or path is incorrect')
-            exit()
+        except IOError:
+            raise IOError("File can't be opened")
+        except FileNotFoundError:
+            raise FileNotFoundError('File not found or path is incorrect')
         sentence = 0
         stop_signs = ('.', '!', '?')
         spaces = (' ', '    ', '\n')

@@ -73,7 +73,7 @@ with open("product_info.json") as f:
         BinaryTree(int(list(element.keys())[0]), int(element[list(element.keys())[0]]))
 try:
     number_of_products = int(input('Number of products: '))
-    print("1<=Code<=14")
+    print("1<=Code of product<=14")
     total_cost = 0
     for i in range(number_of_products):
         code = int(input('Enter code of product: '))
@@ -83,4 +83,4 @@ try:
         total_cost += BinaryTree.cost_of_products(code, quantity)
     print(f'Total price: {total_cost}')
 except ValueError:
-    print("U have incorrect input")
+    print("U have incorrect input. Value error!")
