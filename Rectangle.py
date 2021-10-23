@@ -12,12 +12,16 @@ class Rectangle:
     def length(self):
         return self.__length
 
-    @length.setter
-    def length(self, value):
+    @staticmethod
+    def checking_data(value):
         if not (isinstance(value, (int, float))):
             raise TypeError("U must enter a number(int or float)")
         if not 0 < value < 20:
             raise ValueError("Length should be > 0 and < 20")
+
+    @length.setter
+    def length(self, value):
+        self.checking_data(value)
         self.__length = value
 
     @property
@@ -26,10 +30,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        if not (isinstance(value, (int, float))):
-            raise TypeError("U must enter a number(int or float)")
-        if not 0 < value < 20:
-            raise ValueError("Length should be > 0 and < 20")
+        self.checking_data(value)
         self.__width = value
 
     def perimeter_count(self):

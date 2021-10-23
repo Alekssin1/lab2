@@ -44,7 +44,7 @@ class Rational:
     def __truediv__(self, other):
         if not isinstance(other, Rational):
             raise TypeError("It should be rational type!")
-        elif other.__numerator == 0:
+        if other.__numerator == 0:
             raise ZeroDivisionError("Division by zero!")
         numerator = self.__numerator * other.__denominator
         denominator = self.__denominator * other.__numerator
@@ -57,22 +57,22 @@ class Rational:
 
     def get_floating(self):
         """ return fraction in floating-point format """
-        return f"{round(self.__numerator / self.__denominator, 2)}"
+        return round(self.__numerator / self.__denominator, 2)
 
 
 rational = Rational(3, 6)
-print("3/6 = " + rational.get_fraction() + " = " + rational.get_floating())
+print(f'3/6 = {rational.get_fraction()} = {rational.get_floating()}')
 b = Rational(1, 5)
 c = Rational(1, 10)
 d = Rational(4, 5)
 z = Rational(0, 3)
 e = rational + b
-print(rational.get_fraction() + " + " + b.get_fraction() + " = " + e.get_fraction() + " = " + e.get_floating())
+print(f'{rational.get_fraction()} + {b.get_fraction()} = {e.get_fraction()} = {e.get_floating()}')
 f = e - c
-print(e.get_fraction() + " - " + c.get_fraction() + " = " + f.get_fraction() + " = " + f.get_floating())
+print(f'{e.get_fraction()} - {c.get_fraction()} = {f.get_fraction()} = {f.get_floating()}')
 g = f * d
-print(f.get_fraction() + " * " + d.get_fraction() + " = " + g.get_fraction() + " = " + g.get_floating())
+print(f'{f.get_fraction()} * {d.get_fraction()} = {g.get_fraction()} = {g.get_floating()}')
 h = g / b
-print(g.get_fraction() + " / " + b.get_fraction() + " = " + h.get_fraction() + " = " + h.get_floating())
+print(f'{g.get_fraction()} / {b.get_fraction()} = {h.get_fraction()} = {h.get_floating()}')
 j = h / z
-print(h.get_fraction() + " / " + z.get_fraction() + " = " + j.get_fraction() + " = " + j.get_floating())
+print(f'{h.get_fraction()} /  {z.get_fraction()} = {j.get_fraction()} = {j.get_floating()}')
