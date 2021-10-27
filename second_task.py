@@ -16,7 +16,7 @@ class Text:
         count = 0
         data = open(self.file, 'r')
         for line in data:
-            count += len(list(filter(lambda x: x, re.split(r"[, \n]+", line))))
+            count += len(re.findall(r"[A-Za-z']+", line))
         data.close()
         return count
 
@@ -31,16 +31,8 @@ class Text:
     def count_sentence(self):
         data = open(self.file, 'r')
         sentence = 0
-        stop_signs = ('.', '!', '?')
-        spaces = (' ', '    ', '\n')
-        first_enter = True
         for line in data:
-            for i in line:
-                if i in stop_signs and first_enter:
-                    sentence += 1
-                    first_enter = False
-                elif i not in spaces and i not in stop_signs:
-                    first_enter = True
+            sentence += len(re.findall(r"\w+[.?!]+", line))
         data.close()
         return sentence
 
