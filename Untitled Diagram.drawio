@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-02-23T18:28:33.986Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 OPR/83.0.4254.62" etag="0oCYYM6BAuySO0Q_y6Iq" version="16.4.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-23T18:36:51.824Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 OPR/83.0.4254.62" etag="b3LSlIiNtppwI-MUw7k_" version="16.4.5" type="github">
   <diagram id="IlxGLt2NS1xwJWBnq9o4" name="Page-1">
-    <mxGraphModel dx="1373" dy="1440" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="784" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -70,7 +70,7 @@
         </UserObject>
         <UserObject label="Втома" lucidchartObjectId="wxgYdP0Zdwhg" id="XOR6NoBYtzovQsvjyBrv-13">
           <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=11.7;fontColor=#ffffff;align=center;spacingLeft=8.4;spacingRight=8.4;spacingTop=2.4;spacing=3.6;strokeColor=#134e4e;strokeOpacity=100;fillOpacity=100;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#259b9c;strokeWidth=1.5;" parent="1" vertex="1">
-            <mxGeometry x="769" y="700" width="106" height="28" as="geometry" />
+            <mxGeometry x="750" y="700" width="106" height="28" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" lucidchartObjectId="wxgYBQaVhYbK" id="XOR6NoBYtzovQsvjyBrv-14">
@@ -181,6 +181,106 @@
               <mxPoint x="728.2749999999999" y="679.2539999999999" as="sourcePoint" />
               <mxPoint x="797.762" y="709.2439999999999" as="targetPoint" />
             </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Недостатні знання матеріалу" lucidchartObjectId="~lgYW.i55yNB" id="olEDLrhZOGbl-vZgnfTB-1">
+          <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=11.7;align=center;spacingLeft=8.4;spacingRight=8.4;spacingTop=2.4;spacing=3.6;verticalAlign=middle;strokeOpacity=100;fillOpacity=100;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#e6d0de;strokeWidth=3;gradientColor=#d5739d;strokeColor=#996185;" vertex="1" parent="1">
+            <mxGeometry x="890" y="260" width="105" height="70" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="~lgYE6z.it~q" id="olEDLrhZOGbl-vZgnfTB-2">
+          <mxCell style="html=1;jettySize=18;whiteSpace=wrap;fontSize=13;strokeColor=#666666;strokeOpacity=100;strokeWidth=0.8;rounded=0;startArrow=none;endArrow=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="XOR6NoBYtzovQsvjyBrv-53" target="olEDLrhZOGbl-vZgnfTB-1">
+            <mxGeometry width="100" height="100" relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="790" y="420" />
+              </Array>
+              <mxPoint x="756" y="528" as="sourcePoint" />
+              <mxPoint x="814.5300000000002" y="528" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Особисте" lucidchartObjectId="~lgYW.i55yNB" id="olEDLrhZOGbl-vZgnfTB-5">
+          <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=11.7;align=center;spacingLeft=8.4;spacingRight=8.4;spacingTop=2.4;spacing=3.6;verticalAlign=middle;strokeOpacity=100;fillOpacity=100;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#e6d0de;strokeWidth=3;gradientColor=#d5739d;strokeColor=#996185;" vertex="1" parent="1">
+            <mxGeometry x="890" y="719" width="105" height="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="~lgYE6z.it~q" id="olEDLrhZOGbl-vZgnfTB-6">
+          <mxCell style="html=1;jettySize=18;whiteSpace=wrap;fontSize=13;strokeColor=#666666;strokeOpacity=100;strokeWidth=0.8;rounded=0;startArrow=none;endArrow=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="XOR6NoBYtzovQsvjyBrv-53" target="olEDLrhZOGbl-vZgnfTB-5">
+            <mxGeometry width="100" height="100" relative="1" as="geometry">
+              <Array as="points" />
+              <mxPoint x="756" y="528" as="sourcePoint" />
+              <mxPoint x="814.5300000000002" y="528" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="hxhYGgEa.qN4" id="olEDLrhZOGbl-vZgnfTB-7">
+          <mxCell style="html=1;jettySize=18;whiteSpace=wrap;fontSize=13;strokeWidth=0.8;rounded=0;startArrow=none;endArrow=none;entryX=0;entryY=0.5;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="olEDLrhZOGbl-vZgnfTB-5" target="olEDLrhZOGbl-vZgnfTB-12">
+            <mxGeometry width="100" height="100" relative="1" as="geometry">
+              <Array as="points" />
+              <mxPoint x="960" y="719" as="sourcePoint" />
+              <mxPoint x="1020.842" y="646.857" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="gxhYDr~MpP5R" id="olEDLrhZOGbl-vZgnfTB-10">
+          <mxCell style="html=1;jettySize=18;whiteSpace=wrap;fontSize=13;strokeWidth=0.8;rounded=0;startArrow=none;endArrow=none;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="olEDLrhZOGbl-vZgnfTB-5" target="olEDLrhZOGbl-vZgnfTB-14">
+            <mxGeometry width="100" height="100" relative="1" as="geometry">
+              <Array as="points" />
+              <mxPoint x="995.0050000000001" y="770.002" as="sourcePoint" />
+              <mxPoint x="1020" y="810" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Стосунки/проблема в стосунках" lucidchartObjectId="gxhY1Q0b-Yy9" id="olEDLrhZOGbl-vZgnfTB-12">
+          <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=11.7;fontColor=#ffffff;align=center;spacingLeft=8.4;spacingRight=8.4;spacingTop=2.4;spacing=3.6;strokeColor=#134e4e;strokeOpacity=100;fillOpacity=100;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#259b9c;strokeWidth=1.5;" vertex="1" parent="1">
+            <mxGeometry x="1020" y="630" width="106" height="56" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Сімейні конфлікти" lucidchartObjectId="gxhY1Q0b-Yy9" id="olEDLrhZOGbl-vZgnfTB-14">
+          <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=11.7;fontColor=#ffffff;align=center;spacingLeft=8.4;spacingRight=8.4;spacingTop=2.4;spacing=3.6;strokeColor=#134e4e;strokeOpacity=100;fillOpacity=100;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#259b9c;strokeWidth=1.5;" vertex="1" parent="1">
+            <mxGeometry x="1020" y="780" width="106" height="56" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Погана інфраструктура" lucidchartObjectId="WkgYEflI6K6y" id="olEDLrhZOGbl-vZgnfTB-15">
+          <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=11.7;align=center;spacingLeft=8.4;spacingRight=8.4;spacingTop=2.4;spacing=3.6;verticalAlign=middle;strokeOpacity=100;fillOpacity=100;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#e6d0de;strokeWidth=3;gradientColor=#d5739d;strokeColor=#996185;" vertex="1" parent="1">
+            <mxGeometry x="309" y="686" width="105" height="38" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="WkgY8TNKiiZg" id="olEDLrhZOGbl-vZgnfTB-17">
+          <mxCell style="html=1;jettySize=18;whiteSpace=wrap;fontSize=13;strokeColor=#666666;strokeOpacity=100;strokeWidth=0.8;rounded=0;startArrow=none;endArrow=none;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="XOR6NoBYtzovQsvjyBrv-53" target="olEDLrhZOGbl-vZgnfTB-15">
+            <mxGeometry width="100" height="100" relative="1" as="geometry">
+              <Array as="points" />
+              <mxPoint x="606" y="529" as="sourcePoint" />
+              <mxPoint x="547.47" y="528.7339999999999" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="jygYLORmovcM" id="olEDLrhZOGbl-vZgnfTB-18">
+          <mxCell style="html=1;jettySize=18;whiteSpace=wrap;fontSize=13;strokeWidth=0.8;rounded=0;startArrow=none;endArrow=none;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="olEDLrhZOGbl-vZgnfTB-15" target="olEDLrhZOGbl-vZgnfTB-21">
+            <mxGeometry width="100" height="100" relative="1" as="geometry">
+              <Array as="points" />
+              <mxPoint x="476.2800000000002" y="549.482" as="sourcePoint" />
+              <mxPoint x="280" y="790" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="jygYLORmovcM" id="olEDLrhZOGbl-vZgnfTB-19">
+          <mxCell style="html=1;jettySize=18;whiteSpace=wrap;fontSize=13;strokeWidth=0.8;rounded=0;startArrow=none;endArrow=none;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="olEDLrhZOGbl-vZgnfTB-15" target="olEDLrhZOGbl-vZgnfTB-20">
+            <mxGeometry width="100" height="100" relative="1" as="geometry">
+              <Array as="points" />
+              <mxPoint x="486.2800000000002" y="559.482" as="sourcePoint" />
+              <mxPoint x="230" y="630" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Поганий Інтернет на дистанційній формі навчання" lucidchartObjectId="jygYeWk7bOiA" id="olEDLrhZOGbl-vZgnfTB-20">
+          <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=11.7;fontColor=#ffffff;align=center;spacingLeft=8.4;spacingRight=8.4;spacingTop=2.4;spacing=3.6;strokeColor=#134e4e;strokeOpacity=100;fillOpacity=100;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#259b9c;strokeWidth=1.5;" vertex="1" parent="1">
+            <mxGeometry x="130" y="590" width="106" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Запізнення в університет через затори, проблеми з громадським транспортом" lucidchartObjectId="jygYeWk7bOiA" id="olEDLrhZOGbl-vZgnfTB-21">
+          <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=11.7;fontColor=#ffffff;align=center;spacingLeft=8.4;spacingRight=8.4;spacingTop=2.4;spacing=3.6;strokeColor=#134e4e;strokeOpacity=100;fillOpacity=100;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#259b9c;strokeWidth=1.5;" vertex="1" parent="1">
+            <mxGeometry x="130" y="770" width="106" height="100" as="geometry" />
           </mxCell>
         </UserObject>
       </root>
